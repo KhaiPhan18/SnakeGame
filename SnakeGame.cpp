@@ -18,7 +18,11 @@ struct Point {
 // Lop tro choi Ran
 class SnakeGame {
 public:
-    
+    vector<Point> snake; // Danh sach cac doan cua ran
+    Point food;          // Toa do thuc an
+    int direction;       // Huong di chuyen
+    bool gameOver;       // Trang thai tro choi
+    clock_t lastMoveTime; // Thoi gian di chuyen cuoi cung
 };
 
 int main() {
