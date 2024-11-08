@@ -24,7 +24,24 @@ public:
     bool gameOver;       // Trang thai tro choi
     clock_t lastMoveTime; // Thoi gian di chuyen cuoi cung
 };
-
+void play() {
+        drawBorder(); // Ve duong bien ngay khi bat dau tro choi
+        while (!gameOver) {
+            if (_kbhit()) {
+                char key = _getch(); // Kiem tra phim nhan
+                changeDirection(key); // Thay doi huong di chuyen
+            }
+            // Kiem tra thoi gian de di chuyen
+            if (clock() - lastMoveTime > 200) { // 200 ms delay cho di chuyen
+                clearSnake(); // Xoa ran cu
+                move();       // Di chuyen ran
+                draw();       // Ve ran moi
+                lastMoveTime = clock(); // Cap nhat thoi gian
+            }
+        }
+        gotoxy(5, 10);
+        cout << "Game Over!" << endl; // Thong bao ket thuc tro choi
+}
 int main() {
     srand(static_cast<unsigned>(time(0))); // Khoi tao seed cho ham random
     SnakeGame game; // Tao doi tuong tro choi
