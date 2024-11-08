@@ -24,7 +24,17 @@ public:
     bool gameOver;       // Trang thai tro choi
     clock_t lastMoveTime; // Thoi gian di chuyen cuoi cung
 };
-
+ void move() {
+        Point newHead = snake[0]; // Tao dau moi cho ran
+        if (direction == 0) newHead.x++; // Di chuyen phai
+        if (direction == 1) newHead.y++; // Di chuyen xuong
+        if (direction == 2) newHead.x--; // Di chuyen trai
+        if (direction == 3) newHead.y--; // Di chuyen len
+        // Kiem tra va cham voi bien
+        if (newHead.x < 0 || newHead.x >= 20 || newHead.y < 0 || newHead.y >= 20) {
+            gameOver = true; // Ket thuc tro choi
+            return;
+        }
 int main() {
     srand(static_cast<unsigned>(time(0))); // Khoi tao seed cho ham random
     SnakeGame game; // Tao doi tuong tro choi
