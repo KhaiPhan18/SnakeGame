@@ -28,9 +28,9 @@ public:
 int main() {
     srand(static_cast<unsigned>(time(0))); // Khoi tao seed cho ham random
     SnakeGame game; // Tao doi tuong tro choi
+    game.play(); // Bat dau tro choi
     return 0;
 }
-
 // Ham di chuyen con tro den vi tri (column, line) tren console
 void gotoxy(int column, int line) {
     COORD coord;
