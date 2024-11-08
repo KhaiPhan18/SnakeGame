@@ -24,6 +24,20 @@ public:
     bool gameOver;       // Trang thai tro choi
     clock_t lastMoveTime; // Thoi gian di chuyen cuoi cung
 };
+ void drawBorder() {
+        for (int i = 0; i < 22; i++) {
+            gotoxy(i + 1, 0);    // Ve bien tren
+            cout << "#";
+            gotoxy(i + 1, 21);   // Ve bien duoi
+            cout << "#";
+        }
+        for (int i = 0; i < 22; i++) {
+            gotoxy(0, i);        // Ve bien trai
+            cout << "#";
+            gotoxy(21, i);       // Ve bien phai
+            cout << "#";
+        }
+    }
 
 int main() {
     srand(static_cast<unsigned>(time(0))); // Khoi tao seed cho ham random
