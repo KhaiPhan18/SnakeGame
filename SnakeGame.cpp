@@ -25,6 +25,7 @@ public:
     clock_t lastMoveTime; // Thoi gian di chuyen cuoi cung
 };
 
+
  void move() {
         Point newHead = snake[0]; // Tao dau moi cho ran
         if (direction == 0) newHead.x++; // Di chuyen phai
@@ -55,6 +56,14 @@ void play() {
         gotoxy(5, 10);
         cout << "Game Over!" << endl; // Thong bao ket thuc tro choi
 }
+
+void changeDirection(char key) {
+        if (key == 'a' && direction != 0) direction = 2; // Trai
+        if (key == 'w' && direction != 1) direction = 3; // Len
+        if (key == 'd' && direction != 2) direction = 0; // Phai
+        if (key == 's' && direction != 3) direction = 1; // Xuong
+    }
+
 int main() {
     srand(static_cast<unsigned>(time(0))); // Khoi tao seed cho ham random
     SnakeGame game; // Tao doi tuong tro choi
