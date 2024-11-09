@@ -23,6 +23,15 @@ public:
     int direction;       // Huong di chuyen
     bool gameOver;       // Trang thai tro choi
     clock_t lastMoveTime; // Thoi gian di chuyen cuoi cung
+// Ham khoi tao
+    SnakeGame() {
+        gameOver = false;
+        direction = 0; // Huong di chuyen ban dau (Phai)
+        snake.push_back({ 10, 10 });
+        snake.push_back({ 9, 10 });
+        snake.push_back({ 8, 10 });
+        placeFood(); // Dat thuc an
+        lastMoveTime = clock();
 };
  void drawBorder() {
         for (int i = 0; i < 22; i++) {
