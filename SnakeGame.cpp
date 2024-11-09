@@ -48,14 +48,14 @@ public:
         gotoxy(food.x + 1, food.y + 1);
         cout << "*"; // Ve thuc an
     }
- // Ham ve ran va thuc an len console
-    void draw() {
+
+// Ham xoa ran khoi man hinh
+    void clearSnake() {
         for (auto& segment : snake) {
             gotoxy(segment.x + 1, segment.y + 1);
-            cout << "O"; // Ve doan ran
+            cout << " "; // Xoa doan ran
         }
-        gotoxy(food.x + 1, food.y + 1);
-        cout << "*"; // Ve thuc an
+
     }
 
  void drawBorder() {
