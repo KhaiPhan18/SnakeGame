@@ -24,6 +24,14 @@ public:
     bool gameOver;       // Trang thai tro choi
     clock_t lastMoveTime; // Thoi gian di chuyen cuoi cung
 };
+// Ham xoa ran khoi man hinh
+    void clearSnake() {
+        for (auto& segment : snake) {
+            gotoxy(segment.x + 1, segment.y + 1);
+            cout << " "; // Xoa doan ran
+        }
+    }
+
  void drawBorder() {
         for (int i = 0; i < 22; i++) {
             gotoxy(i + 1, 0);    // Ve bien tren
