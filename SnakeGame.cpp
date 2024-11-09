@@ -39,6 +39,24 @@ public:
         food.x = rand() % 20;
         food.y = rand() % 20;
     }
+ // Ham ve ran va thuc an len console
+    void draw() {
+        for (auto& segment : snake) {
+            gotoxy(segment.x + 1, segment.y + 1);
+            cout << "O"; // Ve doan ran
+        }
+        gotoxy(food.x + 1, food.y + 1);
+        cout << "*"; // Ve thuc an
+    }
+ // Ham ve ran va thuc an len console
+    void draw() {
+        for (auto& segment : snake) {
+            gotoxy(segment.x + 1, segment.y + 1);
+            cout << "O"; // Ve doan ran
+        }
+        gotoxy(food.x + 1, food.y + 1);
+        cout << "*"; // Ve thuc an
+    }
 
  void drawBorder() {
         for (int i = 0; i < 22; i++) {
