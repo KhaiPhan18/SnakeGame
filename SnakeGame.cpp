@@ -33,6 +33,13 @@ public:
         placeFood(); // Dat thuc an
         lastMoveTime = clock();
 };
+
+ // Ham dat thuc an o vi tri ngau nhien
+    void placeFood() {
+        food.x = rand() % 20;
+        food.y = rand() % 20;
+    }
+
  void drawBorder() {
         for (int i = 0; i < 22; i++) {
             gotoxy(i + 1, 0);    // Ve bien tren
