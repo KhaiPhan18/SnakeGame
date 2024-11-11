@@ -78,7 +78,7 @@ public:
         for (int i = 0; i < 22; i++) {
             gotoxy(0, i);        // Ve bien trai
             cout << "#";
-            gotoxy(21, i);       // Ve bien phai
+            gotoxy(22, i);       // Ve bien phai
             cout << "#";
         }
     }
@@ -119,10 +119,19 @@ public:
 
     // Ham thay doi huong di chuyen
     void changeDirection(char key) {
-        if (key == 'a' && direction != 0) direction = 2; // Trai
-        if (key == 'w' && direction != 1) direction = 3; // Len
-        if (key == 'd' && direction != 2) direction = 0; // Phai
-        if (key == 's' && direction != 3) direction = 1; // Xuong
+        if (key == -32) {
+            key = _getch();
+            if (key == 75 && direction != 0) direction = 2;  // Trai
+            if (key == 72 && direction != 1) direction = 3;  // Len
+            if (key == 77 && direction != 2) direction = 0;  // Phai
+            if (key == 80 && direction != 3) direction = 1;  // Xuong
+        }
+        else {
+            if (key == 'a' && direction != 0) direction = 2;  // Trai
+            if (key == 'w' && direction != 1) direction = 3;  // Len
+            if (key == 'd' && direction != 2) direction = 0;  // Phai
+            if (key == 's' && direction != 3) direction = 1;  // Xuong
+        }
     }
 
     // Ham choi tro choi
