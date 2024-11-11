@@ -34,6 +34,7 @@ public:
         snake.push_back({ 8, 10 });
         placeFood(); // Dat thuc an
         lastMoveTime = clock();
+        score = 0;
     }
 
     // Ham dat thuc an o vi tri ngau nhien
@@ -42,7 +43,7 @@ public:
         food.y = rand() % 20;
     }
 
- // Ham ve ran va thuc an len console
+    // Ham ve ran va thuc an len console
     void draw() {
         for (auto& segment : snake) {
             gotoxy(segment.x + 1, segment.y + 1);
@@ -56,15 +57,6 @@ public:
     void displayScore() {
         gotoxy(0, 23); // Vi tri de hien thi diem
         cout << "Score: " << score << " ";
-    }
- // Ham ve ran, thuc an va hien thi diem len console
-    void draw() {
-        for (auto& segment : snake) {
-            gotoxy(segment.x + 1, segment.y + 1);
-            cout << "O"; // Ve doan ran
-        }
-        gotoxy(food.x + 1, food.y + 1);
-        cout << "*"; // Ve thuc an
     }
 
     // Ham xoa ran khoi man hinh
@@ -117,6 +109,7 @@ public:
         if (newHead.x == food.x && newHead.y == food.y) {
             snake.insert(snake.begin(), newHead); // Them dau moi
             placeFood(); // Dat thuc an moi
+            score++; // Tang diem khi an thuc an
         }
         else {
             snake.insert(snake.begin(), newHead); // Them dau moi
@@ -157,8 +150,6 @@ public:
     }
 };
 
-
-e
 int main() {
     srand(static_cast<unsigned>(time(0))); // Khoi tao seed cho ham random
     SnakeGame game; // Tao doi tuong tro choi
