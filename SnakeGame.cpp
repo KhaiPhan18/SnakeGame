@@ -152,9 +152,13 @@ public:
 
         gotoxy(5, 10);
         cout << "Game Over!" << endl; // Thong bao ket thuc tro choi
+        gotoxy(5, 11);
+        cout << "Final Score: " << score << endl; // Hien thi diem cuoi khi game ket thuc
     }
 };
 
+
+e
 int main() {
     srand(static_cast<unsigned>(time(0))); // Khoi tao seed cho ham random
     SnakeGame game; // Tao doi tuong tro choi
