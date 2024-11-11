@@ -23,6 +23,7 @@ public:
     int direction;       // Huong di chuyen
     bool gameOver;       // Trang thai tro choi
     clock_t lastMoveTime; // Thoi gian di chuyen cuoi cung
+    int score; // Bien luu diem so
 
     // Ham khoi tao
     SnakeGame() {
