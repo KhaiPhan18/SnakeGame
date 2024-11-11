@@ -42,7 +42,22 @@ public:
         food.y = rand() % 20;
     }
 
-    // Ham ve ran va thuc an len console
+ // Ham ve ran va thuc an len console
+    void draw() {
+        for (auto& segment : snake) {
+            gotoxy(segment.x + 1, segment.y + 1);
+            cout << "O";
+        }
+        gotoxy(food.x + 1, food.y + 1);
+        cout << "*";
+        displayScore(); // Hien thi diem sau khi ve ran va thuc an
+    }
+
+    void displayScore() {
+        gotoxy(0, 23); // Vi tri de hien thi diem
+        cout << "Score: " << score << " ";
+    }
+ // Ham ve ran, thuc an va hien thi diem len console
     void draw() {
         for (auto& segment : snake) {
             gotoxy(segment.x + 1, segment.y + 1);
